@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel ="stylesheet" href ="./index.css"> 
+        <title>Document</title>
+        <style>
+            table, th, td {
+                border: 1px solid black; 
+            }
+        </style>
+    </head>
+    <body>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+        <script type="text/Javascript" src = "./resources/scripts/index.js"></script>
+        <script type="text/Javascript" src = "./resources/scripts/page4.js"></script>
+
+        <!--Background image-->
+        <div style="background-image: url('./resources/images/surveyBackground.jpg');">
+
+            <!--Navbar-->
+        <nav class="navbar navbar-default">
+            <ul>
+              <li><a class="nav1" href ="./index.html">Home</a></li>
+              <li><a class= "nav2" href ="./page2.html">Performance Review Survey</a></li>
+              <li><a class= "nav3" href ="./page3.html">Feedback</a></li>
+              <li><a class= "nav4" href ="./page4.html">Trends</a></li>
+              <li><a class= "nav5" href = "./page5.html">Growth</a></li>
+            </ul>
+        </nav>
+
+        <!--Jumbotron-->
+        <div class = "jumbotron" style = "letter-spacing: 2px; padding-top: 4%; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; background-color:#108CFC; color:white; box-shadow: 0 10px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);"> <!--Creates a class for jumbotron-->
+          <h1>Managerial Overview</h1>
+        </div>
+
+
+        <div class="container"> 
+          <div class = "row">
+            <div class = "col-md-6"> <!--Holds the donut chart-->
+              <div id="" style="justify-content:space-around;">
+                <div class="tables" style="margin-right: 300px;">
+                  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                  <script type="text/javascript">
+                    google.charts.load("current", {packages:["corechart"]});
+                    google.charts.setOnLoadCallback(drawChart);
+                    function drawChart() {
+                    var data = google.visualization.arrayToDataTable([
+                      ['Feedback Completion', 'Number of Employees'],
+                      ['Completed',     9],
+                      ['Not Completed',      3]
+                    ]);
+
+                    var options = {
+                      title: 'Feedback Completion',
+                      pieHole: 0.5,
+                      backgroundColor: "transparent",
+                      colors: ["grey", "blue"],
+                      fontSize: 17,
+                    };
+                    var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+                    chart.draw(data, options);
+                  }
+                  </script>
+                  <div id="donutchart" class="donutchart"style="width: 700px; height: 400px; opacity: .75;"></div>
+                </div>
+              </div>
+            </div>
+            <div class = "col-md-6"> <!--Holds the bar chart and JS function, cleaner syntax for the java function can be found in page4.js-->
+              <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+              <script type="text/javascript">
+                google.charts.load('current', {'packages':['bar']});
+                google.charts.setOnLoadCallback(drawChart);
+                function drawChart(){
+                const getManagerChartApiUrl = "https://localhost:5001/api/feedback";
+                fetch(getManagerChartApiUrl).then(function(response){
+                console.log(response);  
+                return response.json();
+                }).then(function(json){
+                var leadOne = json[2].leadTotal; 
+                var commOne = json[2].commTotal;
+                var techOne = json[2].techTotal;
+                var leadTwo = json[3].leadTotal;
+                var commTwo = json[3].commTotal; 
+                var techTwo = json[3].techTotal; 
+                var leadThree = json[4].leadTotal; 
+                var commThree = json[4].commTotal; 
+                var techThree = json[4].techTotal; 
+
+                var data = google.visualization.arrayToDataTable([
+                ['Employee', 'Leadership', 'Communication', 'Technical'],
+                ['Employee 1', leadOne, commOne, techOne],
+                ['Employee 2', leadTwo, commTwo, techTwo],
+                ['Employee 3', leadThree, commThree, techThree]  
+                ]);
+                var options = {
+                backgroundColor: "transparent",
+                colors: ["grey", "blue"],
+                fontSize: 17,    
+                chart: {
+                title: 'Company Performance',
+                //subtitle: 'Leadership, Communication, and Technical: 2014-2017',
+                } 
+                };
+                var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
+                chart.draw(data, google.charts.Bar.convertOptions(options));
+                console.log(techThree); 
+                }).catch(function(error){
+                console.log(error);
+                })
+                }
+              </script>
+
+              <div id="columnchart_material" style=" margin-top: 35px; width: 600px; height: 300px;"></div>
+            </div>
+          </div>
+          <div class = "row"> <!--Holds the time line -->
+            <div class = "col-md-12">
+              <head>
+                <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                <script type="text/javascript">
+                  google.charts.load('current', {'packages':['timeline']});
+                  google.charts.setOnLoadCallback(drawChart);
+                  function drawChart() {
+                    var container = document.getElementById('timeline');
+                    var chart = new google.visualization.Timeline(container);
+                    var dataTable = new google.visualization.DataTable();
+            
+                    dataTable.addColumn({ type: 'string', id: 'President' });
+                    dataTable.addColumn({ type: 'date', id: 'Start' });
+                    dataTable.addColumn({ type: 'date', id: 'End' });
+                    dataTable.addRows([
+                      [ 'Survey 1', new Date(2020, 1, 1), new Date(2020, 1, 29) ],
+                      [ 'Survey 2', new Date(2020, 6, 1),  new Date(2020, 7, 1) ],
+                      [ 'Annual Review', new Date(2020, 12, 1),  new Date(2020, 12, 30) ]]);
+            
+                    chart.draw(dataTable);
+                  }
+                </script>
+              </head>
+                <div id="timeline" style="height: 180px;"></div>
+            </div>
+          </div>
+        </div>
+
+</div>  
+
+        <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> 
+    </body>
+</html>
+
+<!--
+
+function drawChart() {
+  var data = google.visualization.arrayToDataTable([
+  ['Employee', 'Leadership', 'Communication', 'Technical'],
+  ['Employee 1', 24, 19, 18],
+  ['Employee 2', 20, 23, 15],
+  ['Employee 3', 17, 18, 22]  
+]);
+var options = {
+  backgroundColor: "transparent",
+  colors: ["grey", "blue"],
+  fontSize: 17,    
+chart: {
+title: 'Company Performance',
+//subtitle: 'Leadership, Communication, and Technical: 2014-2017',
+} 
+};
+var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
+chart.draw(data, google.charts.Bar.convertOptions(options));
+}
+--> 

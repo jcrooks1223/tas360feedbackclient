@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> 
+    <link rel ="stylesheet" href ="./page3.css"> 
+    <!--<link rel = "stylesheet" href ="./cosmo.css"> --> 
+    <title>Document</title>
+</head>
+<body>
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<script type="text/Javascript" src = "./resources/scripts/page3.js"></script>
+  
+<div class = "background">
+
+  <!--Navbar-->
+  <nav class="navbar navbar-default">
+    <ul>
+        <li><a class="nav1" href ="./index.html">Home</a></li>
+        <li><a class= "nav2" href ="./page2.html">Performance Review Survey</a></li>
+        <li><a class= "nav3" href ="./page3.html">Feedback</a></li>
+        <li><a class= "nav4" href ="./page4.html">Trends</a></li>
+        <li><a class= "nav5" href = "./page5.html">Growth</a></li>
+    </ul>
+  </nav>
+
+<!--Jumbotron-->
+<div class = "jumbotron" style = "letter-spacing: 2px; padding-top: 4%; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; background-color:#108CFC; color:white; box-shadow: 0 10px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);"> <!--Creates a class for jumbotron-->
+  <h1>Employee Feedback Profile</h1>
+</div>
+
+
+<div class="container"> 
+  <div class = "row">
+    <div class = "col-md-12">
+      <button class ="btn-primary" onclick="getEmpOne()">Employee One</button>
+      <button class ="btn-primary" onclick="getEmpTwo()">Employee Two</button>
+      <button class ="btn-primary" onclick="getEmpThree()">Employee Three</button>
+
+    </div>
+  </div>
+
+    <div class = "row"> 
+      <div class = "col-md-6">
+          <div class ="profileBox" id = "profileBox">
+            <div id = "surveys">
+
+            </div>
+          </div> 
+      </div> 
+      <div class = "col-md-6"> 
+        <div class ="detailBox" id = "detailBox">
+              <div id= "details">
+                 
+              </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> 
+</body>
+</html>
+
+
+

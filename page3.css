@@ -1,0 +1,269 @@
+
+/*navbar*/ 
+
+.navbar li{
+    display: inline-block; 
+    padding: 20px;
+    font-weight: 120;
+}
+.nav1 {
+    font-weight: bold;
+    font-size: large;  
+}
+.nav2 {
+    
+    font-size: large; 
+}
+.nav3{
+    
+    font-size: large; 
+}
+.nav4{
+    font-size: large;  
+    
+}
+.nav5{
+    font-size: large; 
+}
+
+
+/*boxes*/
+
+
+.profileBox{
+    border: 1px solid black; 
+    height: 600px; 
+    color: #000000;
+    background-color:white; 
+    font-family: sans-serif;
+    box-shadow: grey;
+    font-size: 30px; 
+    list-style-type: none; 
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
+}
+
+
+.detailBox{
+    border: 1px solid black; 
+    height: 600px; 
+    color: #000000;
+    background-color:white; 
+    font-family: sans-serif;
+    font-size: 25px; 
+    list-style-type: none;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
+}
+
+.os-box{
+    border: 1px solid black; 
+    width: 80%;
+    align-content: center; 
+    text-align: center;
+    left: 50px; 
+    position: relative;
+    background-color: rgb(240, 240, 240);
+}
+
+
+/*Regarding the employee profile picture*/ 
+.avatar{
+    background-image: url('./resources/images/profilePic.png');
+    background-size: cover;
+    left: 22px; 
+    top: 22px; 
+    height: 170px;
+    width: 170px;
+    border-radius: 50%;
+    position: relative;
+    /*
+    display: inline-block;
+    vertical-align: middle;  
+    */ 
+}
+.avatar2{
+    background-image: url('./resources/images/empTwo.png');
+    background-size: cover;
+    left: 5px; 
+    top: 15px; 
+    height: 170px;
+    width: 170px;
+    border-radius: 50%;
+    position: relative;
+    /*
+    display: inline-block;
+    vertical-align: middle;  
+    */ 
+}
+.avatar3{
+    background-image: url('./resources/images/empThree.png');
+    background-size: cover;
+    left: 22px; 
+    top: 22px; 
+    height: 170px;
+    width: 170px;
+    border-radius: 50%;
+    position: relative;
+    /*
+    display: inline-block;
+    vertical-align: middle;  
+    */ 
+}
+
+
+.background{
+    width: 100%; 
+    background-image: url('./resources/images/back-2.jpg'); 
+    background-repeat: no-repeat;
+}
+
+.btn1{
+    position: relative;
+    bottom: 140px; 
+    left: 200px;
+}
+
+.surveys{
+    font-size: 100px;
+}
+
+.space{
+    font-size: 10px; 
+}
+
+.EmpName{
+    position: relative;
+    bottom: 140px; 
+    left: 270px; 
+    font-size:30px; 
+}
+
+
+.os-img-red{
+    background-image: url('./resources/images/redBulb.png');
+    background-size: cover;
+    left: 310px; 
+    bottom: 430px; 
+    height: 120px;
+    width: 100px;
+    position: relative;
+}
+.os-img-orange{
+    background-image: url('./resources/images/orangeBulb.png');
+    background-size: cover;
+    left: 310px; 
+    bottom: 430px; 
+    height: 120px;
+    width: 100px;
+    position: relative;
+}
+.os-img-yellow{
+    background-image: url('./resources/images/yellowBulb.png');
+    background-size: cover;
+    left: 310px; 
+    bottom: 430px; 
+    height: 120px;
+    width: 100px;
+    position: relative;
+}
+.os-img-lime{
+    background-image: url('./resources/images/limeBulb.png');
+    background-size: cover;
+    left: 310px; 
+    bottom: 430px; 
+    height: 120px;
+    width: 100px;
+    position: relative;
+}
+.os-img-green{
+    background-image: url('./resources/images/greenBulb.png');
+    background-size: cover;
+    left: 310px; 
+    bottom: 430px; 
+    height: 120px;
+    width: 100px;
+    position: relative;
+}
+
+/*Detail Page*/ 
+
+.d-img-red{
+    background-image: url('./resources/images/redBulb.png');
+    background-size: 50px;
+    background-repeat: no-repeat; 
+    height: 120px;
+    width: 100px;
+    left: 350px; 
+    bottom: 40px; 
+    position: relative;
+}
+.d-img-orange{
+    background-image: url('./resources/images/orangeBulb.png');
+    background-size: 50px;
+    background-repeat: no-repeat; 
+    height: 120px;
+    width: 100px;
+    left: 350px; 
+    bottom: 40px; 
+    position: relative;
+}
+.d-img-yellow{
+    background-image: url('./resources/images/yellowBulb.png');
+    background-size: 50px;
+    background-repeat: no-repeat; 
+    height: 120px;
+    width: 100px;
+    left: 350px; 
+    bottom: 40px; 
+    position: relative;
+}
+.d-img-lime{
+    background-image: url('./resources/images/limeBulb.png');
+    background-size: 50px;
+    background-repeat: no-repeat; 
+    height: 120px;
+    width: 100px;
+    left: 350px; 
+    bottom: 40px; 
+    position: relative;
+}
+.d-img-green{
+    background-image: url('./resources/images/greenBulb.png');
+    background-size: 50px;
+    background-repeat: no-repeat; 
+    height: 120px;
+    width: 100px;
+    left: 350px; 
+    bottom: 40px; 
+    position: relative;
+}
+
+.d-box{
+    border: 1px solid black; 
+    width: 93%;
+    height: 500px;
+    bottom: 100px; 
+    left: 20px; 
+    position: relative;
+    background-color: rgb(240, 240, 240);
+}
+.d-box-2{
+    border: 1px solid black; 
+    width: 99%;
+    height: 500px;
+    right: 20px;
+    bottom: 100px; 
+    position: relative;
+    background-color: rgb(240, 240, 240);
+}
+
+.scoreName{
+    position: relative;
+    top: 20px;  
+    left: 40px; 
+    font-size: 30px; 
+}
+
+.space2{
+    font-size: 14px; 
+    text-align: center;
+}

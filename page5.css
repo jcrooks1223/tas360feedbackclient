@@ -1,0 +1,35 @@
+.navbar li{
+    display: inline-block; 
+    padding: 20px;
+    font-weight: 120;
+}
+.nav1 {
+    font-weight: bold;
+    font-size: large;  
+}
+.nav2 {
+    
+    font-size: large; 
+}
+.nav3{
+    
+    font-size: large; 
+}
+.nav4{
+    font-size: large;  
+    
+}
+.nav5{
+    font-size: large; 
+}
+
+.resultsBox{
+    height: 150px;
+    color: #000000;
+    background-color:rgba(230, 230, 255, 0.712); 
+    font-family: sans-serif;
+    font-size: 30px; 
+    list-style-type: none; 
+    box-shadow: 0 10px 10px rgba(2, 0, 128, 0.12), 0 10px 10px rgba(2, 0, 126, 0.493);
+    text-align: center;
+}

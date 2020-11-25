@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> 
+    <link rel ="stylesheet" href ="./index.css"> 
+    <title>Document</title>
+</head>
+<body onload="showModal()">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<script type="text/Javascript" src = "./resources/scripts/index.js"></script>
+<script type="text/Javascript" src = "./resources/scripts/login-modal.js"></script> 
+<script type="text/Javascript" src = "./resources/scripts/scale-modal.js"></script>
+
+<div style="background-image: url('./resources/images/surveyBackground.jpg');">
+    
+
+
+<!--Navbar-->
+
+<nav class="navbar navbar-default">
+    <ul>
+        <li><a class="nav1" href ="./index.html">Home</a></li>
+        <li><a class= "nav2" href ="./page2.html">Performance Review Survey</a></li>
+        <li><a class= "nav3" href ="./page3.html">Feedback</a></li>
+        <li><a class= "nav4" href ="./page4.html">Trends</a></li>
+        <li><a class= "nav5" href = "./page5.html">Growth</a></li>
+    </ul>
+</nav>
+
+  <!--Creates a class for jumbotron-->
+    <div class = "jumbotron" style = "background-color:#299bff; color: white; box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);"> <!--Creates a class for jumbotron-->
+        <h1>Performance Review Survey</h1>
+    </div>
+
+    
+        <div id="loginModal" class="modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2>Employee Login</h2>
+                    </div>
+                    <div class = "modal-body">
+                        <form onsubmit="return false" method="post">
+                            <label for="enterUser">Username:</label>
+                            <input type="text" name="enterUser" id="enterUser">
+
+                            <label for="enterUser">Password:</label>
+                            <input type="password" name="enterUser" id="enterUser">
+
+                            <input type="submit" value="Submit" id="updateSubmit"/>
+                     
+                        </form>
+                    </div>
+                </div>
+        </div>
+    
+
+
+<style type = "text/css">
+    input[type="radio"]{
+        content: "";
+        display: inline-block; 
+        width:30px;
+        height:30px; 
+        /*
+        margin-bottom:-2px; 
+        margin-right: 5px; 
+        */ 
+        background-image: url('./resources/images/greenBulb.png') no-repeat center bottom;
+        background-size: 16px 16px; 
+        background-color:white; 
+    }
+    
+    input[type="radio"]:before {
+        display:inline-block;
+        content: "";
+        width:30px;
+        height:30px; 
+        /*
+        margin-bottom:-2px; 
+        margin-right: 5px; 
+        */
+        background-color: white;
+        /*border: 1px solid black; */
+        
+        background-image: url('./resources/images/greyBulb.png');
+        background-size: 30px 30px; 
+    }
+    input[id= "insuf"]:checked:before{
+        background-image: url("./resources/images/redBulb.png");
+        background-color: white;
+        background-size: 30px 30px; 
+        width:30px;
+        height:30px; 
+        content: ""; 
+    }
+    input[id= "avg"]:checked:before{
+        background-image: url("./resources/images/orangeBulb.png");
+        background-color: white;
+        background-size: 30px 30px; 
+        width:30px;
+        height:30px; 
+        content: ""; 
+    }
+    input[id= "sat"]:checked:before{
+        background-image: url("./resources/images/yellowBulb.png");
+        background-color: white;
+        background-size: 30px 30px; 
+        width:30px;
+        height:30px; 
+        content: ""; 
+    }
+    input[id= "above"]:checked:before{
+        background-image: url("./resources/images/limeBulb.png");
+        background-color: white;
+        background-size: 30px 30px; 
+        width:30px;
+        height:30px; 
+        content: ""; 
+    }
+    input[id= "ex"]:checked:before{
+        background-image: url("./resources/images/greenBulb.png");
+        background-color: white;
+        background-size: 30px 30px; 
+        width:30px;
+        height:30px; 
+        content: ""; 
+    }
+    
+</style>
+
+<!--Survey-->
+    <div class="container"> 
+        <div class = "row"> 
+            <div class = "col-md-12"> 
+                <div class ="survey" id = "survey">
+                    <form class = "form" onsubmit="return false"; method ="post">
+                            <div class = "text-box">
+                                <p>‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎</p>
+                                <label for="id-empname"> ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎First and last name: </label>
+                                <input type="text" name="empName" id="id-empname"/>
+                                <p>‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎</p>
+                                <label for="id-empfeedback"> ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎First and last name of the employee your feedback is for: </label>
+                                <input type="text" name="empFeedback" id="id-empfeedback"/>
+                                <p>‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎</p>
+                            </div>
+                                <p>‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎</p>
+                                <h4 style = "font-weight: bold;" > Select the option that best describes your colleague's profficiency in the following assessments: </h4>
+                                <p>‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎</p>
+                            
+                        <div>
+                            <h4>How would you assess your colleague's tendancy to motivate team members to accomplish a set of goals?</h4>
+                            <!--Insufficient-->
+                            <div class = form-check-inline>
+                                <input class = "form-check-input" type="radio" value = "1" name = "question1" id="insuf"> </input> 
+                                <label class = "form-check-label" for = "id-q1-insuf"> Insufficient</label>
+                            </div> 
+                            <!--Average-->
+                            <div class = form-check-inline>
+                                <input class = "form-check-input" type="radio" value = "2" name = "question1" id="avg"> </input> 
+                                <label class = "form-check-label" for = "id-q1-avg"><span>Average</span></label>
+                            </div> 
+                            <!--Satisfactory-->
+                            <div class = form-check-inline>
+                                <input class = "form-check-input" type="radio" value = "3" name = "question1" id="sat"> </input> 
+                                <label class = "form-check-label" for = "id-q1-sat"><span>Satisfactory</span> </label>
+                            </div> 
+                            <!--Above Average-->
+                            <div class = form-check-inline>
+                                <input class = "form-check-input" type="radio" value = "4" name = "question1" id="above"> </input> 
+                                <label class = "form-check-label" for = "id-q1-above"><span>Above Average</span></label>
+                            </div> 
+                            <!--Excellent-->
+                            <div class = form-check-inline>
+                                <input class = "form-check-input" type="radio" value = "5" name = "question1" id="ex"> </input> 
+                                <label class = "form-check-label" for = "id-q1-ex"><span>Excellent</span></label>
+                            </div> 
+                        </div>
+                        <!--Question Two-->
+                         <div>
+                            <p>‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎</p>
+                            <h4>How would you assess your colleague's ability to form a clear and concise decision, and remain commited to their decision without meandering?</h4>
+                            <!--Insufficient-->
+                            <div class = form-check-inline>
+                                <input class = "form-check-input" type="radio"  value ="1" name = "question2" id="insuf"> </input> 
+                                <label class = "form-check-label" for = "id-q2-insuf"> Insufficient</label>
+                            </div> 
+                            <!--Average-->
+                            <div class = form-check-inline>
+                                <input class = "form-check-input" type="radio"  value ="2" name = "question2" id="avg"> </input> 
+                                <label class = "form-check-label" for = "id-q2-avg">Average</label>
+                            </div> 
+                            <!--Satisfactory-->
+                            <div class = form-check-inline>
+                                <input class = "form-check-input" type="radio" value ="3" name = "question2" id="sat"> </input> 
+                                <label class = "form-check-label" for = "id-q2-sat"> Satisfactory</label>
+                            </div> 
+                            <!--Above Average-->
+                            <div class = form-check-inline>
+                                <input class = "form-check-input" type="radio"  value ="4" name = "question2" id="above"> </input> 
+                                <label class = "form-check-label" for = "id-q2-above"> Above Average</label>
+                            </div> 
+                            <!--Excellent-->
+                            <div class = form-check-inline>
+                                <input class = "form-check-input" type="radio" value ="5" name = "question2" id="ex"> </input> 
+                                <label class = "form-check-label" for = "id-q2-ex"> Excellent</label>
+                            </div> 
+                        </div>
+                        <!--Question Three-->
+                        <div>
+                            <p>‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎</p>
+                            <h4>How would you assess your colleague's ability to recognize the efforts and achievements of peers?</h4>
+                            <!--Insufficient-->
+                            <div class = form-check-inline>
+                                <input class = "form-check-input" type="radio" value ="1" name = "question3" id="insuf"> </input> 
+                                <label class = "form-check-label" for = "id-q3-insuf"> Insufficient</label>
+                            </div> 
+                            <!--Average-->
+                            <div class = form-check-inline>
+                                <input class = "form-check-input" type="radio" value ="2" name = "question3" id="avg"> </input> 
+                                <label class = "form-check-label" for = "id-q3-avg">Average</label>
+                            </div> 
+                            <!--Satisfactory-->
+                            <div class = form-check-inline>
+                                <input class = "form-check-input" type="radio" value ="3" name = "question3" id="sat"> </input> 
+                                <label class = "form-check-label" for = "id-q3-sat"> Satisfactory</label>
+                            </div> 
+                            <!--Above Average-->
+                            <div class = form-check-inline>
+                                <input class = "form-check-input" type="radio" value ="4" name = "question3" id="above"> </input> 
+                                <label class = "form-check-label" for = "id-q3-above"> Above Average</label>
+                            </div> 
+                            <!--Excellent-->
+                            <div class = form-check-inline>
+                                <input class = "form-check-input" type="radio" value ="5" name = "question3" id="ex"> </input> 
+                                <label class = "form-check-label" for = "id-q3-ex"> Excellent</label>
+                            </div> 
+                        </div>
+                        <!--Question Four-->
+                        <div>
+                            <p>‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎</p>
+                            <h4>How would you assess your colleague's ability to execute their ideas with confidance and perseverance?</h4>
+                            <!--Insufficient-->
+                            <div class = form-check-inline>
+                                <input class = "form-check-input" type="radio" value ="1" name = "question4" id="insuf"> </input> 
+                                <label class = "form-check-label" for = "id-q4-insuf"> Insufficient</label>
+                            </div> 
+                            <!--Average-->
+                            <div class = form-check-inline>
+                                <input class = "form-check-input" type="radio" value ="2" name = "question4" id="avg"> </input> 
+                                <label class = "form-check-label" for = "id-q4-avg">Average</label>
+                            </div> 
+                            <!--Satisfactory-->
+                            <div class = form-check-inline>
+                                <input class = "form-check-input" type="radio" value ="3" name = "question4" id="sat"> </input> 
+                                <label class = "form-check-label" for = "id-q4-sat"> Satisfactory</label>
+                            </div> 
+                            <!--Above Average-->
+                            <div class = form-check-inline>
+                                <input class = "form-check-input" type="radio" value ="4" name = "question4" id="above"> </input> 
+                                <label class = "form-check-label" for = "id-q4-above"> Above Average</label>
+                            </div> 
+                            <!--Excellent-->
+                            <div class = form-check-inline>
+                                <input class = "form-check-input" type="radio" value ="5" name = "question4" id="ex"> </input> 
+                                <label class = "form-check-label" for = "id-q4-ex"> Excellent</label>
+                            </div> 
+                        </div>
+                        <!--Question Five-->
+                        <div>
+                            <p>‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎</p>
+                            <h4>How effecient is your colleague's ability to delegate clearly defined responcibility when directing subordinates? </h4>
+                            <!--Insufficient-->
+                            <div class = form-check-inline>
+                                <input class = "form-check-input" type="radio" value ="1" name = "question5" id="insuf"> </input> 
+                                <label class = "form-check-label" for = "id-q5-insuf"> Insufficient</label>
+                            </div> 
+                            <!--Average-->
+                            <div class = form-check-inline>
+                                <input class = "form-check-input" type="radio" value ="2" name = "question5" id="avg"> </input> 
+                                <label class = "form-check-label" for = "id-q5-avg">Average</label>
+                            </div> 
+                            <!--Satisfactory-->
+                            <div class = form-check-inline>
+                                <input class = "form-check-input" type="radio" value ="3" name = "question5" id="sat"> </input> 
+                                <label class = "form-check-label" for = "id-q5-sat"> Satisfactory</label>
+                            </div> 
+                            <!--Above Average-->
+                            <div class = form-check-inline>
+                                <input class = "form-check-input" type="radio" value ="4" name = "question5" id="above"> </input> 
+                                <label class = "form-check-label" for = "id-q5-above"> Above Average</label>
+                            </div> 
+                            <!--Excellent-->
+                            <div class = form-check-inline>
+                                <input class = "form-check-input" type="radio" value ="5" name = "question5" id="ex"> </input> 
+                                <label class = "form-check-label" for = "id-q5-ex"> Excellent</label>
+                            </div> 
+                        </div>
+                        <!--Question Six-->
+                        <div>
+                            <p>‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎</p>
+                            <h4>How capable is your colleague at replying to messages in a clear, concise, and punctual manner?</h4>
+                            <!--Insufficient-->
+                            <div class = form-check-inline>
+                                <input class = "form-check-input" type="radio" value ="1" name = "question6" id="insuf"> </input> 
+                                <label class = "form-check-label" for = "id-q6-insuf"> Insufficient</label>
+                            </div> 
+                            <!--Average-->
+                            <div class = form-check-inline>
+                                <input class = "form-check-input" type="radio" value ="2" name = "question6" id="avg"> </input> 
+                                <label class = "form-check-label" for = "id-q6-avg">Average</label>
+                            </div> 
+                            <!--Satisfactory-->
+                            <div class = form-check-inline>
+                                <input class = "form-check-input" type="radio" value ="3" name = "question6" id="sat"> </input> 
+                                <label class = "form-check-label" for = "id-q6-sat"> Satisfactory</label>
+                            </div> 
+                            <!--Above Average-->
+                            <div class = form-check-inline>
+                                <input class = "form-check-input" type="radio" value ="4" name = "question6" id="above"> </input> 
+                                <label class = "form-check-label" for = "id-q6-above"> Above Average</label>
+                            </div> 
+                            <!--Excellent-->
+                            <div class = form-check-inline>
+                                <input class = "form-check-input" type="radio" value ="5" name = "question6" id="ex"> </input> 
+                                <label class = "form-check-label" for = "id-q6-ex"> Excellent</label>
+                            </div> 
+                        </div>
+                        <!--Question Seven-->
+                        <div>
+                            <p>‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎</p>
+                            <h4>How would you rate your colleague's ability to actively listen to others and respond positively to constructive feedback?</h4>
+                            <!--Insufficient-->
+                            <div class = form-check-inline>
+                                <input class = "form-check-input" type="radio" value ="1" name = "question7" id="insuf"> </input> 
+                                <label class = "form-check-label" for = "id-q7-insuf"> Insufficient</label>
+                            </div> 
+                            <!--Average-->
+                            <div class = form-check-inline>
+                                <input class = "form-check-input" type="radio" value ="2" name = "question7" id="avg"> </input> 
+                                <label class = "form-check-label" for = "id-q7-avg">Average</label>
+                            </div> 
+                            <!--Satisfactory-->
+                            <div class = form-check-inline>
+                                <input class = "form-check-input" type="radio" value ="3" name = "question7" id="sat"> </input> 
+                                <label class = "form-check-label" for = "id-q7-sat"> Satisfactory</label>
+                            </div> 
+                            <!--Above Average-->
+                            <div class = form-check-inline>
+                                <input class = "form-check-input" type="radio" value ="4" name = "question7" id="above"> </input> 
+                                <label class = "form-check-label" for = "id-q7-above"> Above Average</label>
+                            </div> 
+                            <!--Excellent-->
+                            <div class = form-check-inline>
+                                <input class = "form-check-input" type="radio" value ="5" name = "question7" id="ex"> </input> 
+                                <label class = "form-check-label" for = "id-q7-ex"> Excellent</label>
+                            </div> 
+                        </div>
+                        <!--Question Eight-->
+                        <div>
+                            <p>‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎</p>
+                            <h4>How would you rate your colleague's writing and communication skills in regards to emails, documentation, reports, internal memos, etc.? </h4>
+                            <!--Insufficient-->
+                            <div class = form-check-inline>
+                                <input class = "form-check-input" type="radio" value ="1" name = "question8" id="insuf"> </input> 
+                                <label class = "form-check-label" for = "id-q8-insuf"> Insufficient</label>
+                            </div> 
+                            <!--Average-->
+                            <div class = form-check-inline>
+                                <input class = "form-check-input" type="radio" value ="2" name = "question8" id="avg"> </input> 
+                                <label class = "form-check-label" for = "id-q8-avg">Average</label>
+                            </div> 
+                            <!--Satisfactory-->
+                            <div class = form-check-inline>
+                                <input class = "form-check-input" type="radio" value ="3" name = "question8" id="sat"> </input> 
+                                <label class = "form-check-label" for = "id-q8-sat"> Satisfactory</label>
+                            </div> 
+                            <!--Above Average-->
+                            <div class = form-check-inline>
+                                <input class = "form-check-input" type="radio" value ="4" name = "question8" id="above"> </input> 
+                                <label class = "form-check-label" for = "id-q8-above"> Above Average</label>
+                            </div> 
+                            <!--Excellent-->
+                            <div class = form-check-inline>
+                                <input class = "form-check-input" type="radio" value ="5" name = "question8" id="ex"> </input> 
+                                <label class = "form-check-label" for = "id-q8-ex"> Excellent</label>
+                            </div> 
+                        </div>
+                        <!--Question Nine-->
+                        <div>
+                            <p>‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎</p>
+                            <h4>How consistant is your colleague's efforts in staying up to date with current projects, making sure the needs of clients are met, and following through on deliverables?</h4>
+                            <!--Insufficient-->
+                            <div class = form-check-inline>
+                                <input class = "form-check-input" type="radio" value ="1" name = "question9" id="insuf"> </input> 
+                                <label class = "form-check-label" for = "id-q9-insuf"> Insufficient</label>
+                            </div> 
+                            <!--Average-->
+                            <div class = form-check-inline>
+                                <input class = "form-check-input" type="radio" value ="2" name = "question9" id="avg"> </input> 
+                                <label class = "form-check-label" for = "id-q9-avg">Average</label>
+                            </div> 
+                            <!--Satisfactory-->
+                            <div class = form-check-inline>
+                                <input class = "form-check-input" type="radio" value ="3" name = "question9" id="sat"> </input> 
+                                <label class = "form-check-label" for = "id-q9-sat"> Satisfactory</label>
+                            </div> 
+                            <!--Above Average-->
+                            <div class = form-check-inline>
+                                <input class = "form-check-input" type="radio" value ="4" name = "question9" id="above"> </input> 
+                                <label class = "form-check-label" for = "id-q9-above"> Above Average</label>
+                            </div> 
+                            <!--Excellent-->
+                            <div class = form-check-inline>
+                                <input class = "form-check-input" type="radio" value ="5" name = "question9" id="ex"> </input> 
+                                <label class = "form-check-label" for = "id-q9-ex"> Excellent</label>
+                            </div> 
+                        </div>
+                        <!--Question Ten -->
+                        <div>
+                            <p>‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎</p>
+                            <h4>How considerate of coworkers' well-being is your colleague?</h4>
+                            <!--Insufficient-->
+                            <div class = form-check-inline>
+                                <input class = "form-check-input" type="radio" value ="1" name = "question10" id="insuf"> </input> 
+                                <label class = "form-check-label" for = "id-q10-insuf"> Insufficient</label>
+                            </div> 
+                            <!--Average-->
+                            <div class = form-check-inline>
+                                <input class = "form-check-input" type="radio" value ="2" name = "question10" id="avg"> </input> 
+                                <label class = "form-check-label" for = "id-q10-avg">Average</label>
+                            </div> 
+                            <!--Satisfactory-->
+                            <div class = form-check-inline>
+                                <input class = "form-check-input" type="radio" value ="3" name = "question10" id="sat"> </input> 
+                                <label class = "form-check-label" for = "id-q10-sat"> Satisfactory</label>
+                            </div> 
+                            <!--Above Average-->
+                            <div class = form-check-inline>
+                                <input class = "form-check-input" type="radio" value ="4" name = "question10" id="above"> </input> 
+                                <label class = "form-check-label" for = "id-q10-above"> Above Average</label>
+                            </div> 
+                            <!--Excellent-->
+                            <div class = form-check-inline>
+                                <input class = "form-check-input" type="radio" value ="5" name = "question10" id="ex"> </input> 
+                                <label class = "form-check-label" for = "id-q10-ex"> Excellent</label>
+                            </div> 
+                        </div>
+                        <!--Question Eleven-->
+                        <div>
+                            <p>‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎</p>
+                            <h4>How would you rate your colleague's ability to go beyond what is required, and not display hesitation towards initiative?</h4>
+                            <!--Insufficient-->
+                            <div class = form-check-inline>
+                                <input class = "form-check-input" type="radio" value ="1" name = "question11" id="insuf"> </input> 
+                                <label class = "form-check-label" for = "id-q11-insuf"> Insufficient</label>
+                            </div> 
+                            <!--Average-->
+                            <div class = form-check-inline>
+                                <input class = "form-check-input" type="radio" value ="2" name = "question11" id="avg"> </input> 
+                                <label class = "form-check-label" for = "id-q11-avg">Average</label>
+                            </div> 
+                            <!--Satisfactory-->
+                            <div class = form-check-inline>
+                                <input class = "form-check-input" type="radio" value ="3" name = "question11" id="sat"> </input> 
+                                <label class = "form-check-label" for = "id-q11-sat"> Satisfactory</label>
+                            </div> 
+                            <!--Above Average-->
+                            <div class = form-check-inline>
+                                <input class = "form-check-input" type="radio" value ="4" name = "question11" id="above"> </input> 
+                                <label class = "form-check-label" for = "id-q11-above"> Above Average</label>
+                            </div> 
+                            <!--Excellent-->
+                            <div class = form-check-inline>
+                                <input class = "form-check-input" type="radio" value ="5" name = "question11" id="ex"> </input> 
+                                <label class = "form-check-label" for = "id-q11-ex"> Excellent</label>
+                            </div> 
+                        </div>
+                        <!--Question Twelve-->
+                        <div>
+                            <p>‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎</p>
+                            <h4>How would you assess your colleague's flexibility in adapting to unforseen changes that may occur during a project?</h4>
+                            <!--Insufficient-->
+                            <div class = form-check-inline>
+                                <input class = "form-check-input" type="radio" value ="1" name = "question12" id="insuf"> </input> 
+                                <label class = "form-check-label" for = "id-q12-insuf"> Insufficient</label>
+                            </div> 
+                            <!--Average-->
+                            <div class = form-check-inline>
+                                <input class = "form-check-input" type="radio" value ="2" name = "question12" id="avg"> </input> 
+                                <label class = "form-check-label" for = "id-q12-avg">Average</label>
+                            </div> 
+                            <!--Satisfactory-->
+                            <div class = form-check-inline>
+                                <input class = "form-check-input" type="radio" value ="3" name = "question9" id="sat"> </input> 
+                                <label class = "form-check-label" for = "id-q12-sat"> Satisfactory</label>
+                            </div> 
+                            <!--Above Average-->
+                            <div class = form-check-inline>
+                                <input class = "form-check-input" type="radio" value ="4" name = "question12" id="above"> </input> 
+                                <label class = "form-check-label" for = "id-q12-above"> Above Average</label>
+                            </div> 
+                            <!--Excellent-->
+                            <div class = form-check-inline>
+                                <input class = "form-check-input" type="radio" value ="5" name = "question12" id="ex"> </input> 
+                                <label class = "form-check-label" for = "id-q12-ex"> Excellent</label>
+                            </div> 
+                        </div>
+                        <!--Question Thirteen-->
+                        <div>
+                            <p>‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎</p>
+                            <h4>How would you assess your colleague's problem solving skills when navigating a foreign challenge?</h4>
+                            <!--Insufficient-->
+                            <div class = form-check-inline>
+                                <input class = "form-check-input" type="radio" value ="1" name = "question13" id="insuf"> </input> 
+                                <label class = "form-check-label" for = "id-q13-insuf"> Insufficient</label>
+                            </div> 
+                            <!--Average-->
+                            <div class = form-check-inline>
+                                <input class = "form-check-input" type="radio" value ="2" name = "question13" id="avg"> </input> 
+                                <label class = "form-check-label" for = "id-q13-avg">Average</label>
+                            </div> 
+                            <!--Satisfactory-->
+                            <div class = form-check-inline>
+                                <input class = "form-check-input" type="radio" value ="3" name = "question13" id="sat"> </input> 
+                                <label class = "form-check-label" for = "id-q13-sat"> Satisfactory</label>
+                            </div> 
+                            <!--Above Average-->
+                            <div class = form-check-inline>
+                                <input class = "form-check-input" type="radio" value ="4" name = "question13" id="above"> </input> 
+                                <label class = "form-check-label" for = "id-q13-above"> Above Average</label>
+                            </div> 
+                            <!--Excellent-->
+                            <div class = form-check-inline>
+                                <input class = "form-check-input" type="radio" value ="5" name = "question13" id="ex"> </input> 
+                                <label class = "form-check-label" for = "id-q13-ex"> Excellent</label>
+                            </div> 
+                        </div>
+                        <!--Question Fourteen-->
+                        <div>
+                            <p>‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎</p>
+                            <h4>How would you assess your colleague's productivity and time management skills? </h4>
+                            <!--Insufficient-->
+                            <div class = form-check-inline>
+                                <input class = "form-check-input" type="radio" value ="1" name = "question14" id="insuf"> </input> 
+                                <label class = "form-check-label" for = "id-q14-insuf"> Insufficient</label>
+                            </div> 
+                            <!--Average-->
+                            <div class = form-check-inline>
+                                <input class = "form-check-input" type="radio" value ="2" name = "question14" id="avg"> </input> 
+                                <label class = "form-check-label" for = "id-q14-avg">Average</label>
+                            </div> 
+                            <!--Satisfactory-->
+                            <div class = form-check-inline>
+                                <input class = "form-check-input" type="radio" value ="3" name = "question14" id="sat"> </input> 
+                                <label class = "form-check-label" for = "id-q14-sat"> Satisfactory</label>
+                            </div> 
+                            <!--Above Average-->
+                            <div class = form-check-inline>
+                                <input class = "form-check-input" type="radio" value ="4" name = "question14" id="above"> </input> 
+                                <label class = "form-check-label" for = "id-q14-above"> Above Average</label>
+                            </div> 
+                            <!--Excellent-->
+                            <div class = form-check-inline>
+                                <input class = "form-check-input" type="radio" value ="5" name = "question14" id="ex"> </input> 
+                                <label class = "form-check-label" for = "id-q14-ex"> Excellent</label>
+                            </div> 
+                        </div>
+                        <!--Question Fifteen-->
+                        <div>
+                            <p>‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎</p>
+                            <h4>How would you rate your colleague's ability to learn and apply new concepts quickly and dilligently? </h4>
+                            <!--Insufficient-->
+                            <div class = form-check-inline>
+                                <input class = "form-check-input" type="radio" value ="1" name = "question15" id="insuf"> </input> 
+                                <label class = "form-check-label" for = "id-q15-insuf"> Insufficient</label>
+                            </div> 
+                            <!--Average-->
+                            <div class = form-check-inline>
+                                <input class = "form-check-input" type="radio" value ="2" name = "question15" id="avg"> </input> 
+                                <label class = "form-check-label" for = "id-q15-avg">Average</label>
+                            </div> 
+                            <!--Satisfactory-->
+                            <div class = form-check-inline>
+                                <input class = "form-check-input" type="radio" value ="3" name = "question15" id="sat"> </input> 
+                                <label class = "form-check-label" for = "id-q15-sat"> Satisfactory</label>
+                            </div> 
+                            <!--Above Average-->
+                            <div class = form-check-inline>
+                                <input class = "form-check-input" type="radio" value ="4" name = "question15" id="above"> </input> 
+                                <label class = "form-check-label" for = "id-q15-above"> Above Average</label>
+                            </div> 
+                            <!--Excellent-->
+                            <div class = form-check-inline>
+                                <input class = "form-check-input" type="radio" value ="5" name = "question15" id="ex"> </input> 
+                                <label class = "form-check-label" for = "id-q15-ex"> Excellent</label>
+                            </div> 
+                        </div>
+                            <p>‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎</p>
+                            <div class = "submit-box">
+                                <p>‎‏‏‎Please review your answers carefully and click submit once you are done. </p>
+                                <input type = "submit" class = "btn btn-primary" value="Submit" onclick="postSurvey()"/>
+                            </div>
+                  </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> 
+</body>
+</html>
