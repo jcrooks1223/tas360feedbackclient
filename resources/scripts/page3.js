@@ -3,7 +3,7 @@
 function getEmpOne(){
     console.log("test"); 
    // const empOneApiUrl = "https://localhost:5001/api/feedback";
-    const empOneApiUrl ="https://tas360feedbackapi.herokuapp.com/api/feedback"
+    const empOneApiUrl ="https://tas360feedbackapi.herokuapp.com/api/feedback";
 
     fetch(empOneApiUrl).then(function(response){
         console.log(response); 
@@ -86,7 +86,7 @@ function getEmpOne(){
 function getOneLeadDeets(){
     console.log("test"); 
     //const oneLeadDeetsApiUrl = "https://localhost:5001/api/feedback";
-    const oneLeadDeetsApiUrl ="https://tas360feedbackapi.herokuapp.com/api/feedback"
+    const oneLeadDeetsApiUrl ="https://tas360feedbackapi.herokuapp.com/api/feedback";
 
     fetch(oneLeadDeetsApiUrl).then(function(response){
         console.log(response);  
@@ -180,7 +180,7 @@ function getOneLeadDeets(){
 function getOneCommDeets(){
     console.log("test"); 
     //const oneCommDeetsApiUrl = "https://localhost:5001/api/feedback";
-    const oneCommDeetsApiUrl ="https://tas360feedbackapi.herokuapp.com/api/feedback"
+    const oneCommDeetsApiUrl ="https://tas360feedbackapi.herokuapp.com/api/feedback";
 
     fetch(oneCommDeetsApiUrl).then(function(response){
         console.log(response);  
@@ -638,7 +638,7 @@ function getTwoCommDeets(){
 function getTwoTechDeets(){
     console.log("test"); 
     //const twoTechDeetsApiUrl = "https://localhost:5001/api/feedback";
-    const twoTechDeetsApiUrl="https://tas360feedbackapi.herokuapp.com/api/feedback"
+    const twoTechDeetsApiUrl="https://tas360feedbackapi.herokuapp.com/api/feedback";
 
     fetch(twoTechDeetsApiUrl).then(function(response){
         console.log(response);  
