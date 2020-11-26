@@ -1,5 +1,6 @@
 function getFeedback(){
-    const getFeedbackApiUrl = "https://localhost:5001/api/feedback";
+    //const getFeedbackApiUrl = "https://localhost:5001/api/feedback";
+    const getFeedbackApiUrl ="https://tas360feedbackapi.herokuapp.com/api/feedback"
 
     fetch(getFeedbackApiUrl).then(function(response){
         console.log(response);
