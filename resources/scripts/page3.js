@@ -2,7 +2,8 @@
 
 function getEmpOne(){
     console.log("test"); 
-    const empOneApiUrl = "https://localhost:5001/api/feedback";
+   // const empOneApiUrl = "https://localhost:5001/api/feedback";
+    const empOneApiUrl ="https://tas360feedbackapi.herokuapp.com/api/feedback"
 
     fetch(empOneApiUrl).then(function(response){
         console.log(response); 
@@ -84,7 +85,8 @@ function getEmpOne(){
 //EMPLOYEE ONE - LEAD DETAILS 
 function getOneLeadDeets(){
     console.log("test"); 
-    const oneLeadDeetsApiUrl = "https://localhost:5001/api/feedback";
+    //const oneLeadDeetsApiUrl = "https://localhost:5001/api/feedback";
+    const oneLeadDeetsApiUrl ="https://tas360feedbackapi.herokuapp.com/api/feedback"
 
     fetch(oneLeadDeetsApiUrl).then(function(response){
         console.log(response);  
@@ -177,7 +179,8 @@ function getOneLeadDeets(){
 //EMPLOYEE ONE - COMM DETAILS 
 function getOneCommDeets(){
     console.log("test"); 
-    const oneCommDeetsApiUrl = "https://localhost:5001/api/feedback";
+    //const oneCommDeetsApiUrl = "https://localhost:5001/api/feedback";
+    const oneCommDeetsApiUrl ="https://tas360feedbackapi.herokuapp.com/api/feedback"
 
     fetch(oneCommDeetsApiUrl).then(function(response){
         console.log(response);  
@@ -270,7 +273,9 @@ function getOneCommDeets(){
 //EMPLOYEE ONE - TECH DETAILS 
 function getOneTechDeets(){
     console.log("test"); 
-    const oneTechDeetsApiUrl = "https://localhost:5001/api/feedback";
+    //const oneTechDeetsApiUrl = "https://localhost:5001/api/feedback";
+    const oneTechDeetsApiUrl ="https://tas360feedbackapi.herokuapp.com/api/feedback";
+    
 
     fetch(oneTechDeetsApiUrl).then(function(response){
         console.log(response);  
@@ -366,7 +371,8 @@ function getOneTechDeets(){
 
 function getEmpTwo(){
     console.log("test"); 
-    const empTwoApiUrl = "https://localhost:5001/api/feedback";
+    //const empTwoApiUrl = "https://localhost:5001/api/feedback";
+    const empTwoApiUrl="https://tas360feedbackapi.herokuapp.com/api/feedback";
 
     fetch(empTwoApiUrl).then(function(response){
         console.log(response); 
@@ -443,7 +449,8 @@ function getEmpTwo(){
 //EMPLOYEE TWO -- LEAD DEETS 
 function getTwoLeadDeets(){
     console.log("test"); 
-    const twoLeadDeetsApiUrl = "https://localhost:5001/api/feedback";
+    //const twoLeadDeetsApiUrl = "https://localhost:5001/api/feedback";
+    const twoLeadDeetsApiUrl="https://tas360feedbackapi.herokuapp.com/api/feedback";
 
     fetch(twoLeadDeetsApiUrl).then(function(response){
         console.log(response);  
@@ -536,7 +543,8 @@ function getTwoLeadDeets(){
 //EMPLOYEE TWO - COMM DETAILS 
 function getTwoCommDeets(){
     console.log("test"); 
-    const twoCommDeetsApiUrl = "https://localhost:5001/api/feedback";
+    //const twoCommDeetsApiUrl = "https://localhost:5001/api/feedback";
+   const twoCommDeetsApiUrl ="https://tas360feedbackapi.herokuapp.com/api/feedback";
 
     fetch(twoCommDeetsApiUrl).then(function(response){
         console.log(response);  
@@ -629,7 +637,8 @@ function getTwoCommDeets(){
 //EMPLOYEE TWO - TECH DETAILS 
 function getTwoTechDeets(){
     console.log("test"); 
-    const twoTechDeetsApiUrl = "https://localhost:5001/api/feedback";
+    //const twoTechDeetsApiUrl = "https://localhost:5001/api/feedback";
+    const twoTechDeetsApiUrl="https://tas360feedbackapi.herokuapp.com/api/feedback"
 
     fetch(twoTechDeetsApiUrl).then(function(response){
         console.log(response);  
@@ -723,7 +732,8 @@ function getTwoTechDeets(){
 
 function getEmpThree(){
     console.log("test"); 
-    const empThreeApiUrl = "https://localhost:5001/api/feedback";
+    //const empThreeApiUrl = "https://localhost:5001/api/feedback";
+   const empThreeApiUrl ="https://tas360feedbackapi.herokuapp.com/api/feedback";
 
     fetch(empThreeApiUrl).then(function(response){
         console.log(response); 
@@ -801,7 +811,9 @@ function getEmpThree(){
 //EMPLOYEE Three -- LEAD DEETS 
 function getThreeLeadDeets(){
     console.log("test"); 
-    const threeLeadDeetsApiUrl = "https://localhost:5001/api/feedback";
+    //const threeLeadDeetsApiUrl = "https://localhost:5001/api/feedback";
+    const threeLeadDeetsApiUrl ="https://tas360feedbackapi.herokuapp.com/api/feedback";
+
 
     fetch(threeLeadDeetsApiUrl).then(function(response){
         console.log(response);  
@@ -894,7 +906,8 @@ function getThreeLeadDeets(){
 //EMPLOYEE THREE - COMM DETAILS 
 function getThreeCommDeets(){
     console.log("test"); 
-    const threeCommDeetsApiUrl = "https://localhost:5001/api/feedback";
+    const threeCommDeetsApiUrl ="https://tas360feedbackapi.herokuapp.com/api/feedback";
+    ;
 
     fetch(threeCommDeetsApiUrl).then(function(response){
         console.log(response);  
@@ -987,7 +1000,8 @@ function getThreeCommDeets(){
 //EMPLOYEE THREE - TECH DETAILS 
 function getThreeTechDeets(){
     console.log("test"); 
-    const twoThreeDeetsApiUrl = "https://localhost:5001/api/feedback";
+    const twoThreeDeetsApiUrl = "https://tas360feedbackapi.herokuapp.com/api/feedback";
+
 
     fetch(twoThreeDeetsApiUrl).then(function(response){
         console.log(response);  

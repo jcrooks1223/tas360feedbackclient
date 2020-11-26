@@ -1,7 +1,8 @@
 
 
 function getTimeChart(){
-    const getTimeChartApiUrl = "https://localhost:5001/api/feedback";
+    const getTimeChartApiUrl ="https://tas360feedbackapi.herokuapp.com/api/feedback";
+    ;
 
     fetch(getTimeChartApiUrl).then(function(response){
         console.log(response);  
@@ -62,7 +63,8 @@ function getTimeChart(){
 }
 
 function getResults(){
-    const getResultsApiUrl = "https://localhost:5001/api/feedback";
+    const getResultsApiUrl ="https://tas360feedbackapi.herokuapp.com/api/feedback";
+
     let html = "</p>"
     fetch(getResultsApiUrl).then(function(response){
         return response.json(); 

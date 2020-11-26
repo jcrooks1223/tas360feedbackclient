@@ -24,7 +24,7 @@ chart.draw(data, google.charts.Bar.convertOptions(options));
 //google.charts.setOnLoadCallback(getManagerChart());
 
 function drawChart(){
-    const getManagerChartApiUrl = "https://localhost:5001/api/feedback";
+    const getManagerChartApiUrl ="https://tas360feedbackapi.herokuapp.com/api/feedback";
 
     fetch(getManagerChartApiUrl).then(function(response){
         console.log(response);  

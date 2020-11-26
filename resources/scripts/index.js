@@ -27,7 +27,8 @@ function getFeedback(){
 
 // getting the new survey results 
 function postSurvey(){
-    const postFeedbackApiUrl = "https://localhost:5001/api/feedback";
+    //const postFeedbackApiUrl = "https://localhost:5001/api/feedback";
+    const postFeedbackApiUrl ="https://tas360feedbackapi.herokuapp.com/api/feedback"
 
     const employeeReviewData = document.getElementById("id-empname").value;
     const employeeFeedbackData = document.getElementById("id-empfeedback").value;
@@ -199,7 +200,8 @@ function postSurvey(){
 
 
 function feedbackTable(){
-    const feedbackTableApiUrl = "https://localhost:5001/api/feedback";
+    //const feedbackTableApiUrl = "https://localhost:5001/api/feedback";
+    const FeedbackTableApiUrl ="https://tas360feedbackapi.herokuapp.com/api/feedback"
 
     fetch(feedbackTableApiUrl).then(function(response){
         console.log(response);
